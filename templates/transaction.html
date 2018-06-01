@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h1>Transaction</h1>
+    {% from "includes/_formhelpers.html" import render_field %}
+    <form method = "Post" action = "">
+        <div class = "form-group">
+        {{render_field(form.vendor, class_="form-control")}}
+        </div>
+        <div class = "form-group">
+        {{render_field(form.buyer, class_="form-control")}}
+        </div> 
+        <div class = "form-group">
+        {{render_field(form.car, class_="form-control")}}
+        </div> 
+        <div class = "form-group">
+        {{render_field(form.private_key, class_="form-control")}}
+        </div> 
+        <p><input type = "submit" class = "btn btn-primary"  value = "Submit"></p>
+        {{ form.csrf_token }}
+    </form>
+{% endblock %}
